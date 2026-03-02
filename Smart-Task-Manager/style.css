@@ -723,17 +723,18 @@ header{
 
 
 ::-webkit-scrollbar {
-    width: 0;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #5b5050;
+    background: #ffffff;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #b0c7b6; 
-}
+    background-color: #000000; 
+    border-radius: 10px;
+} 
 
 
 .todo{
@@ -769,9 +770,10 @@ header{
     z-index: 1000;
     height: 200px;
     width: 100%;
-    background-color: #007bff;
+    background-color: #041f3a;
     border-radius: 3px;
-    margin: 2px 10px;
+    margin: 50px 10px;
+    /* padding: -30px; */
     transition: all 0.1s ease;
     box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
 }
@@ -1266,6 +1268,15 @@ body.light-mode .fa-solid {
     color: #333;
 }
 
+body.light-mode ::-webkit-scrollbar-track {
+    background: #000000;
+    border-radius: 10px;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb{
+    background-color: #ffffff; 
+    border-radius: 10px;
+} 
 
 .deleteModalLight h3{
     color: rgb(255, 255, 255);

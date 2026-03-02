@@ -378,6 +378,24 @@ function dragAndDrop(taskColumn){
         if (dropZone) {
             dropZone.classList.add('dragover');
         }
+        // const afterElement = getDragAfterElement(taskColumn, e.clientY);
+        // const draggingEl = document.querySelector('.dragging');
+        // if (!draggingEl) return;
+        
+        // // Remove any existing drop indicators
+        // document.querySelectorAll('.drop-indicator').forEach(el => el.remove());
+        
+        // // Only show indicator if hovering over the same or different column
+        // const indicator = document.createElement('div');
+        // indicator.classList.add('drop-indicator');
+        
+        // if (afterElement == null) {
+        //     taskColumn.appendChild(indicator);
+        //     console.log('before')
+        // } else {
+        //     taskColumn.insertBefore(indicator, afterElement);
+        //     console.log('after')
+        // }
     })
 
     taskColumn.addEventListener('dragleave',function(e){
@@ -406,8 +424,10 @@ function dragAndDrop(taskColumn){
         
         if (afterElement == null) {
             taskColumn.appendChild(indicator);
+            // console.log('before')
         } else {
             taskColumn.insertBefore(indicator, afterElement);
+            // console.log('after')
         }
     })
 
