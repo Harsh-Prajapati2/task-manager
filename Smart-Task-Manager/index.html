@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Smart Task Manager </h1>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+        <div class="add-task-wrapper">
+            <div id="btn-add-task" class="add-task-header">
+                <span>+ Add Task</span>
+                <i class="fa-solid fa-chevron-down add-task-arrow"></i>
+            </div>
+            <form id="form" class="hide-task-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="input-title" placeholder="What needs to be done?" required>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority" class="input-priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="due-date">Due Date</label>
+                    <input type="date" name="due-date" id="due-date" class="input-due-date" required>
+                </div>
+                <div class="form-group form-group-full">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" rows="3" class="input-description" placeholder="Add details about this task..."></textarea>
+                </div>
+                <div class="form-group form-group-full form-actions">
+                    <button type="submit" id="btn-submit" class="btn-submit">Add Task</button>
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <!-- search and filter  -->
+        <div class="search-filter-wrapper">
+            <div id="btn-toggle-search" class="search-filter-header">
+                <span>Search & Filter</span>
+                <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+            </div>
+            <div class="search-filter hide-search-filter">
+                <div class="search-filter-item">
+                    <div class="search-container">
+                        <input type="text" name="search" id="search" placeholder="Search by task title...">
+                        <button id="search-task" class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="filter-container">
+                        <select id="task-priority" name="priority">
+                            <option value="" disabled selected>Select Priority</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                        <select id="task-status" name="status">
+                            <option value="" disabled selected>Select Status</option>
+                            <option value="overdue">Over Due</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="search-filter-container" class="search-tasks filters-tasks">
+                    <div class="empty-search-filter">Nothing to show. Apply filter or search by task title.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- task shown  -->
+
+    <div class="task-display" id="task-list">
+        <div class="task-column">
+            <div class="task-header">
+                <h3>TO DO Task <span id="count-todo" class="task-count">0</span></h3>
+            </div>
+            <div id="task-container-to-do" class="dropzone">
+                <div class="drop-here hidden-important">
+                    + Drop Here To Add
+                </div>
+
+            </div>
+        </div>
+        <div class="task-column">
+            <div class="task-header">
+                <h3>Progress Task <span id="count-progress" class="task-count">0</span></h3>
+            </div>
+            <div id="task-container-in-progress" class="dropzone">
+                <div class="drop-here hidden-important">
+                    + Drop Here To Add
+                </div>
+            </div>
+        </div>
+        <div class="task-column">
+            <div class="task-header">
+                <h3>Completed Task <span id="count-completed" class="task-count">0</span></h3>
+            </div>
+            <div id="task-container-completed" class="dropzone">
+                <div class="drop-here hidden-important ">
+                    + Drop Here To Add
+                </div>
+            </div>
+        </div>
+        <div class="task-column task-column-overdue">
+            <div class="task-header">
+                <h3>Overdue Task <span id="count-overdue" class="task-count">0</span></h3>
+            </div>
+            <div id="task-container-overdue" class="dropzone">
+                <div class="drop-here hidden-important">
+                    + Drop Here To Add
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="server.js"></script>
+</html>
