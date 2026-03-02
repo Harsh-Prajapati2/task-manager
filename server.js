@@ -223,6 +223,12 @@ allTask.sort((a, b) => {
     return new Date(a.dueDate) - new Date(b.dueDate);
 });
 
+allTask.sort((a, b) => {
+    const pA = new Date(a.dueDate);
+    const pB = new Date(b.dueDate);
+    return pA - pB;
+})
+
 // Re-check every 1 hours in case a task becomes overdue while page is open
 setInterval(function(){
     const prevStatuses = allTask.map(t => t.status);
@@ -284,7 +290,7 @@ function hideDrop(taskColumn){
 }
 function showDropHere(taskColumnId){
     hideDropHereColumn = taskColumnId;
-    const allContainers = [toDoTaskContainer, progressTaskContainer, completedTaskContainer, overdueTaskContainer];
+    const allContainers = [toDoTaskContainer, progressTaskContainer, completedTaskContainer];
     allContainers.forEach(container => {
         if(container.id !== taskColumnId){
             showDrop(container);
@@ -292,7 +298,7 @@ function showDropHere(taskColumnId){
     });
 }
 function hideDropHere(){
-    const allContainers = [toDoTaskContainer, progressTaskContainer, completedTaskContainer, overdueTaskContainer];
+    const allContainers = [toDoTaskContainer, progressTaskContainer, completedTaskContainer];
     allContainers.forEach(container => {
         if(container.id !== hideDropHereColumn){
             hideDrop(container);
@@ -467,7 +473,7 @@ function dragAndDrop(taskColumn){
 dragAndDrop(toDoTaskContainer);
 dragAndDrop(progressTaskContainer);
 dragAndDrop(completedTaskContainer);
-dragAndDrop(overdueTaskContainer);
+// dragAndDrop(overdueTaskContainer);
 
 // --------------------------- change task status in ui when drag and drop or click using button --------- //
 function changeTaskStatusInUI(dragged,targetId){

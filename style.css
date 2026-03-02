@@ -500,7 +500,7 @@ header{
 }
 
 .task-column-overdue {
-    background-color: #3a1a1a;
+    background-color:#412c2c;
     border-color: #5a2020;
 }
 
@@ -723,7 +723,7 @@ header{
 
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -779,7 +779,7 @@ header{
 }
 
 .dragover{
-    border : 2px dashed black;
+    border : 2px dashed rgb(255, 252, 252);
     scale: 1.02;
 }
 
@@ -1088,7 +1088,7 @@ header{
 
 /* ========== LIGHT MODE ========== */
 body.light-mode {
-    background-color: #f0f2f5;
+    background-color: #edf0f7;
     color: #222;
 }
 
@@ -1133,7 +1133,7 @@ body.light-mode #form .input-description,
 body.light-mode .search-container input,
 body.light-mode #task-priority,
 body.light-mode #task-status {
-    background-color: #fff;
+    background-color: #e7dcdc;
     color: #222;
     border-color: #bbb;
 }
@@ -1167,7 +1167,7 @@ body.light-mode .task-column {
 }
 
 body.light-mode .task-column-overdue {
-    background-color: #fde8e8;
+    background-color: #ffd1d1;
     border-color: #e8bcbc;
 }
 
@@ -1228,7 +1228,7 @@ body.light-mode .drop-here:hover {
 }
 
 body.light-mode .dragover {
-    border-color: #555;
+    border-color: #111111;
 }
 
 body.light-mode .modal {
@@ -1269,7 +1269,7 @@ body.light-mode .fa-solid {
 }
 
 body.light-mode ::-webkit-scrollbar-track {
-    background: #000000;
+    background: #3c3c3c;
     border-radius: 10px;
 }
 
@@ -1277,6 +1277,27 @@ body.light-mode ::-webkit-scrollbar-thumb{
     background-color: #ffffff; 
     border-radius: 10px;
 } 
+
+body.light-mode .todo{
+    border-left: 5px solid var(--todo-border-color);
+    border-radius: 14px;
+}
+
+body.light-mode .progress{
+    border-left: 5px solid var(--progress-border-color);
+    border-radius: 14px;
+}
+
+body.light-mode .completed{
+    border-left: 5px solid var(--completed-border-color);
+    border-radius: 14px;
+    min-height: fit-content;
+}
+
+body.light-mode .overdue{
+    border-left: 5px solid var(--overdue-border-color);
+    border-radius: 14px;
+}
 
 .deleteModalLight h3{
     color: rgb(255, 255, 255);
@@ -1287,3 +1308,24 @@ body.light-mode ::-webkit-scrollbar-thumb{
 .deleteModalDark h3{
     color: rgb(0, 0, 0);
 }
+
+::-webkit-scrollbar:horizontal {
+    /* width: 7px; */
+    height: 7px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background: #000000;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal{
+    background-color: #ffffff; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
